@@ -1,0 +1,1541 @@
+[
+    {
+        "id": "59558e3bef38c35d",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ac98b767bfddb927",
+        "type": "mqtt in",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "topic": "casa/temperatura",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "b52527fda135038b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 120,
+        "wires": [
+            [
+                "1d6e878b43dd1f7a"
+            ]
+        ]
+    },
+    {
+        "id": "d85664e822296509",
+        "type": "mqtt out",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "topic": "casa/sensoresLeds",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b52527fda135038b",
+        "x": 470,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "5cf1fb283e2a1d9f",
+        "type": "ui_switch",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "label": "Off/On",
+        "tooltip": "",
+        "group": "30753e4ffe8d636b",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "ligados",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "desligados",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 70,
+        "y": 240,
+        "wires": [
+            [
+                "d85664e822296509",
+                "7a1e5fbd6b571a4c"
+            ]
+        ]
+    },
+    {
+        "id": "ed26a91a70fb7bab",
+        "type": "mqtt in",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "topic": "casa/umidade",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "b52527fda135038b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 60,
+        "wires": [
+            [
+                "21dd1b6657670734"
+            ]
+        ]
+    },
+    {
+        "id": "7a1e5fbd6b571a4c",
+        "type": "ui_text",
+        "z": "59558e3bef38c35d",
+        "group": "30753e4ffe8d636b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Sensores de Presença: ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 490,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "21dd1b6657670734",
+        "type": "ui_gauge",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "group": "c433a62fc06563d6",
+        "order": 2,
+        "width": 3,
+        "height": 3,
+        "gtype": "donut",
+        "title": "Umidade",
+        "label": "g/m³",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 440,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "1d6e878b43dd1f7a",
+        "type": "ui_gauge",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "group": "c433a62fc06563d6",
+        "order": 1,
+        "width": 3,
+        "height": 3,
+        "gtype": "donut",
+        "title": "Temperatura",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 450,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "cee444bd000e4b01",
+        "type": "mqtt out",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "topic": "casa/fita1-control",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b52527fda135038b",
+        "x": 470,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "1f2063bd4317f946",
+        "type": "ui_switch",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "label": "Fita 1",
+        "tooltip": "",
+        "group": "c9685a3b5a19203a",
+        "order": 2,
+        "width": 5,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "ligar",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "desligar",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 70,
+        "y": 300,
+        "wires": [
+            [
+                "cee444bd000e4b01"
+            ]
+        ]
+    },
+    {
+        "id": "99639922207d616a",
+        "type": "ui_switch",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "label": "Relé 1",
+        "tooltip": "",
+        "group": "39c47da83516e42b",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "ligar",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "desligar",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 70,
+        "y": 600,
+        "wires": [
+            [
+                "095465e8b21cc0ca"
+            ]
+        ]
+    },
+    {
+        "id": "095465e8b21cc0ca",
+        "type": "mqtt out",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "topic": "casa/rele1-control",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b52527fda135038b",
+        "x": 470,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "240d11d0e49698d5",
+        "type": "ui_colour_picker",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "label": "Fita 1: Cores",
+        "group": "c9685a3b5a19203a",
+        "format": "rgb",
+        "outformat": "string",
+        "showSwatch": true,
+        "showPicker": true,
+        "showValue": true,
+        "showHue": true,
+        "showAlpha": false,
+        "showLightness": false,
+        "square": "false",
+        "dynOutput": "false",
+        "order": 3,
+        "width": 1,
+        "height": 1,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 90,
+        "y": 360,
+        "wires": [
+            [
+                "cee444bd000e4b01"
+            ]
+        ]
+    },
+    {
+        "id": "5212ea8fef2802e0",
+        "type": "ui_switch",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "label": "Fita 2",
+        "tooltip": "",
+        "group": "c9685a3b5a19203a",
+        "order": 4,
+        "width": 5,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "ligar",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "desligar",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 70,
+        "y": 400,
+        "wires": [
+            [
+                "8dd3f0b063bfce96"
+            ]
+        ]
+    },
+    {
+        "id": "e883c52b69b77d30",
+        "type": "ui_switch",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "label": "Fita 3",
+        "tooltip": "",
+        "group": "c9685a3b5a19203a",
+        "order": 6,
+        "width": 5,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "ligar",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "desligar",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 70,
+        "y": 500,
+        "wires": [
+            [
+                "ad91234eea038bfb"
+            ]
+        ]
+    },
+    {
+        "id": "8dd3f0b063bfce96",
+        "type": "mqtt out",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "topic": "casa/fita2-control",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b52527fda135038b",
+        "x": 470,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "ad91234eea038bfb",
+        "type": "mqtt out",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "topic": "casa/fita3-control",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b52527fda135038b",
+        "x": 470,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "1ad21fe189f90cb3",
+        "type": "ui_colour_picker",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "label": "Fita 2: Cores",
+        "group": "c9685a3b5a19203a",
+        "format": "rgb",
+        "outformat": "string",
+        "showSwatch": true,
+        "showPicker": true,
+        "showValue": true,
+        "showHue": true,
+        "showAlpha": false,
+        "showLightness": false,
+        "square": "false",
+        "dynOutput": "false",
+        "order": 5,
+        "width": 1,
+        "height": 1,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 90,
+        "y": 460,
+        "wires": [
+            [
+                "8dd3f0b063bfce96"
+            ]
+        ]
+    },
+    {
+        "id": "1959c97e3bf3f382",
+        "type": "ui_colour_picker",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "label": "Fita 3: Cores",
+        "group": "c9685a3b5a19203a",
+        "format": "rgb",
+        "outformat": "string",
+        "showSwatch": true,
+        "showPicker": false,
+        "showValue": false,
+        "showHue": true,
+        "showAlpha": false,
+        "showLightness": false,
+        "square": "false",
+        "dynOutput": "false",
+        "order": 7,
+        "width": 1,
+        "height": 1,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 90,
+        "y": 560,
+        "wires": [
+            [
+                "ad91234eea038bfb"
+            ]
+        ]
+    },
+    {
+        "id": "74dea91c8cd92ccb",
+        "type": "mqtt out",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "topic": "casa/rele2-control",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b52527fda135038b",
+        "x": 470,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "d2fd929d970fe5aa",
+        "type": "mqtt out",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "topic": "casa/rele3-control",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b52527fda135038b",
+        "x": 470,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "029a5b7426983350",
+        "type": "ui_switch",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "label": "Relé 2",
+        "tooltip": "",
+        "group": "39c47da83516e42b",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "ligar",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "desligar",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 70,
+        "y": 660,
+        "wires": [
+            [
+                "74dea91c8cd92ccb"
+            ]
+        ]
+    },
+    {
+        "id": "a82c2c50ce4ad94c",
+        "type": "ui_switch",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "label": "Relé 3",
+        "tooltip": "",
+        "group": "39c47da83516e42b",
+        "order": 4,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "ligar",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "desligar",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 70,
+        "y": 720,
+        "wires": [
+            [
+                "d2fd929d970fe5aa"
+            ]
+        ]
+    },
+    {
+        "id": "8389051d27251e3e",
+        "type": "ui_text",
+        "z": "59558e3bef38c35d",
+        "group": "c9685a3b5a19203a",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Off/On  Cores",
+        "format": "{{msg.payload}}",
+        "layout": "row-right",
+        "x": 690,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "0aa6b01904634cb3",
+        "type": "ui_text",
+        "z": "59558e3bef38c35d",
+        "group": "39c47da83516e42b",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Off/On",
+        "format": "{{msg.payload}}",
+        "layout": "row-right",
+        "x": 650,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "f26597063ca89389",
+        "type": "ui_switch",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "label": "Off/On",
+        "tooltip": "",
+        "group": "b519217034f2316d",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "ligar",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "desligar",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 70,
+        "y": 780,
+        "wires": [
+            [
+                "69aa9b7d05218c0c"
+            ]
+        ]
+    },
+    {
+        "id": "69aa9b7d05218c0c",
+        "type": "mqtt out",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "topic": "casa/arcondicionado",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b52527fda135038b",
+        "x": 480,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "e91c5e012f244dc6",
+        "type": "ui_numeric",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "label": "Temperatura: ",
+        "tooltip": "",
+        "group": "b519217034f2316d",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "wrap": false,
+        "passthru": true,
+        "topic": "",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": "17",
+        "max": "32",
+        "step": 1,
+        "x": 90,
+        "y": 840,
+        "wires": [
+            [
+                "69aa9b7d05218c0c"
+            ]
+        ]
+    },
+    {
+        "id": "3204a8090436e70a",
+        "type": "ui_dropdown",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "label": "Tempo ligado: ",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "30753e4ffe8d636b",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "10 segundos",
+                "value": "10000",
+                "type": "str"
+            },
+            {
+                "label": "30 segundos",
+                "value": "30000",
+                "type": "str"
+            },
+            {
+                "label": "1 minuto",
+                "value": "60000",
+                "type": "str"
+            },
+            {
+                "label": "2 minutos",
+                "value": "120000",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 180,
+        "wires": [
+            [
+                "d85664e822296509"
+            ]
+        ]
+    },
+    {
+        "id": "d0dc31def7cb251a",
+        "type": "ui_ui_control",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "events": "change",
+        "x": 500,
+        "y": 1260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b5c2748aa9742705",
+        "type": "ui_button",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "group": "d8fc32e931681e5d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Iluminação",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 90,
+        "y": 1260,
+        "wires": [
+            [
+                "7ae5c1f78c5ef737"
+            ]
+        ]
+    },
+    {
+        "id": "7ae5c1f78c5ef737",
+        "type": "change",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"tab\":\"Iluminação\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 1260,
+        "wires": [
+            [
+                "d0dc31def7cb251a"
+            ]
+        ]
+    },
+    {
+        "id": "52ebcb41d994599d",
+        "type": "ui_ui_control",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "events": "change",
+        "x": 500,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4c7f2ad929728d02",
+        "type": "ui_button",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "group": "d8fc32e931681e5d",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Arrefecimento",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 1320,
+        "wires": [
+            [
+                "021736bc1dc90abc"
+            ]
+        ]
+    },
+    {
+        "id": "021736bc1dc90abc",
+        "type": "change",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"tab\":\"Arrefecimento\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 1320,
+        "wires": [
+            [
+                "52ebcb41d994599d"
+            ]
+        ]
+    },
+    {
+        "id": "c60253618251ecac",
+        "type": "ui_ui_control",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "events": "change",
+        "x": 500,
+        "y": 1440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4cf3f6101de9078d",
+        "type": "ui_button",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "group": "3994a4ca91d38b89",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "Voltar ao Menu",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 1440,
+        "wires": [
+            [
+                "04326ee9987d1f20"
+            ]
+        ]
+    },
+    {
+        "id": "04326ee9987d1f20",
+        "type": "change",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"tab\":\"Home\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 1440,
+        "wires": [
+            [
+                "c60253618251ecac"
+            ]
+        ]
+    },
+    {
+        "id": "b8f4451e568a86a7",
+        "type": "ui_ui_control",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "events": "change",
+        "x": 500,
+        "y": 1500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c51089072b5f6622",
+        "type": "ui_button",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "group": "15ecb216473f5dc9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Voltar ao Menu",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 1500,
+        "wires": [
+            [
+                "590be764ae74111e"
+            ]
+        ]
+    },
+    {
+        "id": "590be764ae74111e",
+        "type": "change",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"tab\":\"Home\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 1500,
+        "wires": [
+            [
+                "b8f4451e568a86a7"
+            ]
+        ]
+    },
+    {
+        "id": "c7654a6860a7443f",
+        "type": "ui_ui_control",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "events": "change",
+        "x": 500,
+        "y": 1560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9d9c7be02fa9a9ee",
+        "type": "ui_button",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "group": "81c0a81e1908769e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Voltar ao Menu",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 1560,
+        "wires": [
+            [
+                "ea2efc1ad8e544cd"
+            ]
+        ]
+    },
+    {
+        "id": "ea2efc1ad8e544cd",
+        "type": "change",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"tab\":\"Home\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 1560,
+        "wires": [
+            [
+                "c7654a6860a7443f"
+            ]
+        ]
+    },
+    {
+        "id": "a791bca5fb09ad91",
+        "type": "ui_button",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "group": "d8fc32e931681e5d",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Segurança",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 90,
+        "y": 1380,
+        "wires": [
+            [
+                "aafcb717e2267645"
+            ]
+        ]
+    },
+    {
+        "id": "a7578bbbd0ef81a0",
+        "type": "ui_ui_control",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "events": "change",
+        "x": 500,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aafcb717e2267645",
+        "type": "change",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"tab\":\"Segurança\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 1380,
+        "wires": [
+            [
+                "a7578bbbd0ef81a0"
+            ]
+        ]
+    },
+    {
+        "id": "523ce0b3d5290758",
+        "type": "mqtt in",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "topic": "casa/sensorPorta1",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "b52527fda135038b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 900,
+        "wires": [
+            [
+                "9cf69c72a9d29b39"
+            ]
+        ]
+    },
+    {
+        "id": "9cf69c72a9d29b39",
+        "type": "ui_text",
+        "z": "59558e3bef38c35d",
+        "group": "9acc01703f8fbb10",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Porta Principal: ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 460,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "fdc9a5ef0a48e0c0",
+        "type": "mqtt out",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "topic": "casa/tranca1",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b52527fda135038b",
+        "x": 450,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "ade64552e63b0e5d",
+        "type": "ui_switch",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "label": "Tranca",
+        "tooltip": "",
+        "group": "9acc01703f8fbb10",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "trancar",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "destrancar",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 70,
+        "y": 960,
+        "wires": [
+            [
+                "fdc9a5ef0a48e0c0"
+            ]
+        ]
+    },
+    {
+        "id": "9d1fcdd31ae693bf",
+        "type": "mqtt in",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "topic": "casa/sensorPorta2",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "b52527fda135038b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 1080,
+        "wires": [
+            [
+                "c604be8229cf64e0"
+            ]
+        ]
+    },
+    {
+        "id": "c604be8229cf64e0",
+        "type": "ui_text",
+        "z": "59558e3bef38c35d",
+        "group": "9acc01703f8fbb10",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Porta Cozinha:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 460,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "9f2b2525cb4d85d6",
+        "type": "mqtt in",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "topic": "casa/estadoPorta1",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "b52527fda135038b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 1020,
+        "wires": [
+            [
+                "dfa82dc31ef7cf36"
+            ]
+        ]
+    },
+    {
+        "id": "dfa82dc31ef7cf36",
+        "type": "ui_text",
+        "z": "59558e3bef38c35d",
+        "group": "9acc01703f8fbb10",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 430,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "b28f531a08c39538",
+        "type": "mqtt out",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "topic": "casa/tranca2",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b52527fda135038b",
+        "x": 450,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "f025019890d21953",
+        "type": "ui_switch",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "label": "Tranca",
+        "tooltip": "",
+        "group": "9acc01703f8fbb10",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "trancar",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "destrancar",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 70,
+        "y": 1140,
+        "wires": [
+            [
+                "b28f531a08c39538"
+            ]
+        ]
+    },
+    {
+        "id": "3ddb330820a68e0d",
+        "type": "mqtt in",
+        "z": "59558e3bef38c35d",
+        "name": "",
+        "topic": "casa/estadoPorta2",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "b52527fda135038b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 1200,
+        "wires": [
+            [
+                "137f460cee607313"
+            ]
+        ]
+    },
+    {
+        "id": "137f460cee607313",
+        "type": "ui_text",
+        "z": "59558e3bef38c35d",
+        "group": "9acc01703f8fbb10",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 430,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "b52527fda135038b",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "30753e4ffe8d636b",
+        "type": "ui_group",
+        "name": "LED",
+        "tab": "a3508d41a5ea4409",
+        "order": 2,
+        "disp": true,
+        "width": 7,
+        "collapse": false
+    },
+    {
+        "id": "c433a62fc06563d6",
+        "type": "ui_group",
+        "name": "Temperatura e Umidade",
+        "tab": "4f5944c8a767f65a",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false
+    },
+    {
+        "id": "c9685a3b5a19203a",
+        "type": "ui_group",
+        "name": "RGB",
+        "tab": "a3508d41a5ea4409",
+        "order": 4,
+        "disp": true,
+        "width": 6,
+        "collapse": false
+    },
+    {
+        "id": "39c47da83516e42b",
+        "type": "ui_group",
+        "name": "RELÉ",
+        "tab": "a3508d41a5ea4409",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false
+    },
+    {
+        "id": "b519217034f2316d",
+        "type": "ui_group",
+        "name": "Ar-Condicionado",
+        "tab": "4f5944c8a767f65a",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false
+    },
+    {
+        "id": "d8fc32e931681e5d",
+        "type": "ui_group",
+        "name": "Menu",
+        "tab": "7fd426ab837d9fd1",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "3994a4ca91d38b89",
+        "type": "ui_group",
+        "name": "Botão",
+        "tab": "a3508d41a5ea4409",
+        "order": 1,
+        "disp": false,
+        "width": 6,
+        "collapse": false
+    },
+    {
+        "id": "15ecb216473f5dc9",
+        "type": "ui_group",
+        "name": "Botão",
+        "tab": "4f5944c8a767f65a",
+        "order": 1,
+        "disp": false,
+        "width": 6,
+        "collapse": false
+    },
+    {
+        "id": "81c0a81e1908769e",
+        "type": "ui_group",
+        "name": "Botão",
+        "tab": "893d8e2cb6b7fb35",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "9acc01703f8fbb10",
+        "type": "ui_group",
+        "name": "Portas",
+        "tab": "893d8e2cb6b7fb35",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "a3508d41a5ea4409",
+        "type": "ui_tab",
+        "name": "Iluminação",
+        "icon": "wi-wu-sunny",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "4f5944c8a767f65a",
+        "type": "ui_tab",
+        "name": "Arrefecimento",
+        "icon": "wi-wu-sunny",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7fd426ab837d9fd1",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "893d8e2cb6b7fb35",
+        "type": "ui_tab",
+        "name": "Segurança",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    }
+]
